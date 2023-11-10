@@ -1,9 +1,10 @@
 import { ExecutionContext } from '@nestjs/common';
 import { AuthGuard } from './auth.guard';
 import { createMock } from '@golevelup/ts-jest';
+import { LoggerService } from '../../logger.service';
 
 describe('AuthGuard', () => {
-  const authGuard = new AuthGuard();
+  const authGuard = new AuthGuard(new LoggerService());
   // ...
 
   it(`should return false with invalid apiKey`, () => {

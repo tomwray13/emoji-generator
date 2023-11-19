@@ -13,7 +13,7 @@ export class AppController {
     @Query('index', EmojiValidationPipe) index?: number,
   ) {
     return {
-      browser: request.headers['user-agent'],
+      browser: request.headers['browser'],
       emoji: this.appService.getEmoji(index),
     };
   }
